@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :find_project, only: [:show, :edit, :update, :delete]
+  before_action :find_project, only: [:show, :edit, :update, :destroy]
 
   def index
     @projects = Project.all
@@ -23,10 +23,15 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update_attributes(project_params)
-      redirect_to @post, notice: "Hurray! Your project has been updated."
+      redirect_to @project, notice: "Hurray! Your project has been updated."
     else
       render 'edit', notice: "Oh no Bbk! I could not update the project"
     end
+  end
+
+  def destroy
+    @project.destroy
+    redirect_to projects_path
   end
 
   private
