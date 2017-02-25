@@ -1,17 +1,13 @@
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-    </tr>
-  </thead>
+<h1 id="page_title">Stuff I've written</h1>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div id="posts_wrapper" class="skinny_wrapper">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <p class="date"><%= post.created_at.strftime('%A, %B %d') %></p>
+      <h2><a href="#"><%= link_to post.title, post %></a></h2>
+      <hr>
+    </div>
+  <% end %>
+</div>
+
+<%= will_paginate @posts %>
