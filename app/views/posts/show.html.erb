@@ -13,10 +13,10 @@
 
   <div id="share_box">
     <p>Share the DO list</p>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-github"></i></a>
-    <a href="#"><i class="fa fa-facebook"></i></a>
-    <a href="#"><i class="fa fa-google-plus"></i></a>
+    <a onclick="javascript:window.open('http://twitter.com/share?text=<%= @post.title %> by @bbkkhadka - &amp;url=<%= url_for([@post, { only_path: false }]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-twitter"></i></a>
+    <a onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-facebook"></i></a>
+    <a onclick="javascript:window.open('https://plus.google.com/share?url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fa fa-google-plus"></i></a>
+
   </div>
 
   <hr>
