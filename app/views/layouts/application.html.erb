@@ -10,8 +10,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+  <header id="main_navigation" class="clearfix">
+    <%#= link_to "Bbk Khadka", root_path, class: "name" %>
+    <nav>
+      <%= link_to "Articles", posts_path %>
+      <%= link_to "Projects", projects_path %>
+      <a href="#">Contacts</a>
+    </nav>
+    
+  </header>
+
+  <% if notice %>
+    <p class="notice">notice</p>
+  <% elsif alert %>
+    <p class="alert">alert</p>
+  <% end %>
+
   <%= yield %>
+
+  <footer id="main_footer">
+    <p class="copyright">&copy;<%= Time.zone.now.year %> Bibek Khadka</p>
+    <nav>
+      <a href="https://twitter.com/bbkkhadka"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/roringbbk"><i class="fa fa-github"></i></a>
+    </nav>
+  </footer>
 
 </body>
 </html>

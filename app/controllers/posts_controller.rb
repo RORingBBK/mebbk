@@ -27,9 +27,9 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes(post_params)
-      redirect_to @post, notice: "Hurray! Your article was successfully saved."
+      redirect_to @post, notice: "Hurray! Your article was successfully saved"
     else
-      render 'edit', notice: "Oh no Bbk! I could not update the article."
+      render 'edit', notice: "Oh no Bbk! I could not update the article"
     end
   end
 
