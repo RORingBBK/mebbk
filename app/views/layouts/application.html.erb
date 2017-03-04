@@ -16,6 +16,9 @@
       <%= link_to "Articles", posts_path %>
       <%= link_to "Projects", projects_path %>
       <a href="#">Contacts</a>
+      <% if current_user  %>
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+      <% end %>
     </nav>
     
   </header>
